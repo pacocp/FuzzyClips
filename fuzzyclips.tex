@@ -1,0 +1,164 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{fancyvrb}
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+\usetheme{bjeldbak}
+%\usetheme{Pittsbrgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[FuzzyClips]{FuzzyClips} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Francisco Carrillo Pérez} % Your name
+\institute[UGR] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+Universidad de Granada \\ % Your institution for the title page
+\medskip
+
+}
+\date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{Indice} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+\section{Introducción }
+\begin{frame}
+	\frametitle{Introducción}
+	FuzzyClips es una extensión de CLIPS creada por el \textit{Integrated Reasoning Group of the Institute for Information Technology of the National Research Council of Canada }, que nos da la capacidad de representar y manipular reglas y hechos difusos.
+\end{frame}
+
+\section{Instalación}
+\begin{frame}
+	\frametitle{Instalación y Documentación}
+	Mirror donde poder descargar los ejecutables de Windows y Linux:
+	\url{http://awesom.eu/~quentin/archives/2010/04/22/fuzzyclips_downloads/index.html}.\\
+	También se puede encontrar en el mismo enlace la documentación.
+\end{frame}
+
+\section{¿Cómo p*** se programa en esto?}
+
+\subsection{Tranquilidad}
+\begin{frame}
+\frametitle{Tranquilidad}
+La sintáxis es la misma que en CLIPS, solo se añaden ciertas funcionalidades que es lo que nos permite la representación de la incertidumbre.
+\end{frame}
+
+\subsection{Fuzzy Templates}
+
+\begin{frame}[fragile]
+	\frametitle{deftemplate}
+	Todas las variables fuzzy deben declararse en un template antes de poder usarse. Se declara el template de la siguiente forma:
+	\begin{Verbatim}[tabsize=8,fontsize=\footnotesize]
+	(deftemplate <name> [“<comments>”]
+	    <from> <to> [<unit>] ; rango de valores
+	    (
+	        t1
+	        .
+	        .    ; lista de los términos primarios
+	        .    
+         	tn
+	    )
+	)
+	\end{Verbatim}
+
+\end{frame}
+\subsection{Fuzzy Facts}
+
+\subsection{Fuzzy Rules}
+
+
+
+%----------------------------------------------------------------------------------------
+
+\end{document} 
