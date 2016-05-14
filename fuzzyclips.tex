@@ -153,12 +153,91 @@ La sintáxis es la misma que en CLIPS, solo se añaden ciertas funcionalidades q
 	\end{Verbatim}
 
 \end{frame}
+\begin{frame}[fragile]
+	Ejemplo de como quedaría un deftemplate:
+	\begin{verbatim}
+	(deftemplate Tx  "output water temperature"
+	    5 65 Celsius
+	    (
+	        (cold (z 10 26)) ;standard set representation
+	        (OK (PI 2 36))
+	        (hot (s 37 60))
+	    )
+	)
+	
+	\end{verbatim}
+\end{frame}
+\begin{frame}
+	\includegraphics[scale=0.4]{imagenes/imagen2.png}
+\end{frame}
+\begin{frame}
+	\includegraphics[scale=0.4]{imagenes/imagen1.png}
+\end{frame}
 \subsection{Fuzzy Facts}
-
+\begin{frame}[fragile]
+	\frametitle{deffacts}
+	El formato que tendrían los deffacts sería el siguiente:
+	\begin{verbatim}
+	(deffacts <deffacts-name> [<comment>]
+	    <RHS-pattern>*
+	)
+	
+	\end{verbatim}
+\end{frame}
+\begin{frame}[fragile]
+	Un ejemplo simple con el template anterior sería:
+	\begin{verbatim}
+	(deffacts fuzzy-fact
+	    (Tx cold)
+	)
+	\end{verbatim}
+\end{frame}
 \subsection{Fuzzy Rules}
+\begin{frame}[fragile]
+	\frametitle{defrule}
+	La sintaxis de los defrule y su construcción es la misma, un pequeño ejemplo sería:
+	\begin{verbatim}
+	(defrule one
+	    (Tx cold)
+	    =>
+	    (assert (Feeling FrioDelCarajo))
+	)
+	\end{verbatim}
+	En este caso estaríamos también insertando un hecho fuzzy.
+\end{frame}
 
+\section{Problemas}
 
+\begin{frame}
+	\frametitle{Problemas}
+	\begin{enumerate}
+		\item No tiene mantenimiento(o no tiene pinta de que tenga).
+		\item Escasa documentación.
+		\item ¡El mirror de descarga lo tiene un estudiante(o antiguo estudiante, a saber) en su página web!
+	\end{enumerate}
+\end{frame}
 
+\section{Alternativas y conclusión}
+\begin{frame}
+	\frametitle{Conclusión}
+	Es una herramienta potente, pero se ve limitada por la excasa documentación. El código fuente está subido en este repo de Github: \url{https://github.com/rorchard/FuzzyCLIPS}. No hay mucha comunidad, haciéndo búsqueda en Google no encuentras mucho.
+\end{frame}
+\begin{frame}[fragile]
+	\frametitle{Alternativas}
+	La principal alternativa que he encotrado es scikit-fuzzy \url{https://github.com/scikit-fuzzy/scikit-fuzzy}, que es una librería para Python $\heartsuit$.
+\end{frame}
+\section{Bibliografía}
+\begin{frame}
+	\frametitle{Bibliografía}
+	\begin{itemize}
+		\item \url{http://awesom.eu/~quentin/archives/2010/04/22/fuzzyclips_downloads/index.html}
+		\item \url{http://alumni.cs.ucr.edu/~vladimir/cs171/quickfuzzy.pdf}
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\huge \centering ¡Gracias! ¿Preguntas? \\
+	\normalsize (espero saber contestar)
+\end{frame}
 %----------------------------------------------------------------------------------------
 
 \end{document} 
